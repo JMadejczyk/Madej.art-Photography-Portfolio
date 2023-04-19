@@ -26,7 +26,7 @@ section {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   /* margin: 20px; */
   margin: 1vw;
@@ -62,4 +62,9 @@ footer {
   position: relative;
   bottom: 0;
   margin-top: auto;
+}
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
 }
