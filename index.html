@@ -10,57 +10,148 @@
     <header>
       <h1>Fotografia portretowa Jakub Madejczyk</h1>
     </header>
-    <section>
-      <div class="photo">
-        <img
-          src="C:\Users\jbmk0\Documents\coding\Portfolio\zdj1.jpg"
-          alt="Zdjęcie 1"
-          onclick="openImg(src)"
-        />
-      </div>
-      <div class="photo">
-        <img
-          src="C:\Users\jbmk0\Documents\coding\Portfolio\zdj2.jpg"
-          alt="Zdjęcie 2"
-          onclick="openImg(src)"
-        />
-      </div>
-      <div class="photo">
-        <img
-          src="C:\Users\jbmk0\Documents\coding\Portfolio\zdj3.jpg"
-          alt="Zdjęcie 3"
-          onclick="openImg(src)"
-        />
-      </div>
-      <div class="photo">
-        <img
-          src="C:\Users\jbmk0\Documents\coding\Portfolio\zdj4.jpg"
-          alt="Zdjęcie 4"
-          onclick="openImg(src)"
-        />
-      </div>
-      <div class="photo">
-        <img
-          src="C:\Users\jbmk0\Documents\coding\Portfolio\zdj5.jpg"
-          alt="Zdjęcie 5"
-          onclick="openImg(src)"
-        />
-      </div>
-      <div class="photo">
-        <img
-          src="C:\Users\jbmk0\Documents\coding\Portfolio\zdj6.jpg"
-          alt="Zdjęcie 6"
-          onclick="openImg(src)"
-        />
-      </div>
-    </section>
+    <div id="container">
+      <section>
+        <div class="photo">
+          <img
+            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0001.jpg"
+            alt="Zdjęcie"
+            onclick="openImg(src)"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0002.jpg"
+            alt="Zdjęcie"
+            onclick="openImg(src)"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0003.jpg"
+            alt="Zdjęcie"
+            onclick="openImg(src)"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0004.jpg"
+            alt="Zdjęcie"
+            onclick="openImg(src)"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0005.jpg"
+            alt="Zdjęcie"
+            onclick="openImg(src)"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0006.jpg"
+            alt="Zdjęcie"
+            onclick="openImg(src)"
+          />
+        </div>
+      </section>
+      <section>
+        <div class="photo">
+          <img
+            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0001.jpg"
+            alt="Zdjęcie"
+            onclick="openImg(src)"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0002.jpg"
+            alt="Zdjęcie"
+            onclick="openImg(src)"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0003.jpg"
+            alt="Zdjęcie"
+            onclick="openImg(src)"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0004.jpg"
+            alt="Zdjęcie"
+            onclick="openImg(src)"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0005.jpg"
+            alt="Zdjęcie"
+            onclick="openImg(src)"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0006.jpg"
+            alt="Zdjęcie"
+            onclick="openImg(src)"
+          />
+        </div>
+      </section>
+      <section>
+        <div class="photo">
+          <img
+            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0001.jpg"
+            alt="Zdjęcie"
+            onclick="openImg(src)"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0002.jpg"
+            alt="Zdjęcie"
+            onclick="openImg(src)"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0003.jpg"
+            alt="Zdjęcie"
+            onclick="openImg(src)"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0004.jpg"
+            alt="Zdjęcie"
+            onclick="openImg(src)"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0005.jpg"
+            alt="Zdjęcie"
+            onclick="openImg(src)"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0006.jpg"
+            alt="Zdjęcie"
+            onclick="openImg(src)"
+          />
+        </div>
+      </section>
+    </div>
+
     <footer>
       <p>Copyright © 2023 Jakub Madejczyk</p>
     </footer>
     <script>
       function openImg(src) {
         // window.open(src);
-        location.href = src;
+        location.href = src.slice(0, -4) + "_.jpg";
       }
     </script>
   </body>

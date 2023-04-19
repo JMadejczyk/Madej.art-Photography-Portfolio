@@ -16,25 +16,38 @@ header {
   text-align: center;
 }
 
+#container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
 /* style dla sekcji z galerią zdjęć */
 section {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 20px;
+  align-items: center;
+  /* margin: 20px; */
+  margin: 1vw;
+
+  width: 31vw;
 }
 
 /* style dla poszczególnych zdjęć */
 .photo {
-  margin: 5px;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  margin: 0.25vw;
+  /* box-shadow: 2px 2px 6px rgba(0, 0, 0, 0); */
   overflow: hidden;
-  width: 300px;
-  height: 200px;
+  /* max-width: 400px; */
+  /* max-height: 400px; */
   position: relative;
+  max-width: 30vw;
 }
 img {
-  max-width: 100%;
+  width: 30vw;
+  /* height: auto; */
+  /* height: 400px; */
 }
 
 /* style dla stopki */
@@ -45,8 +58,7 @@ footer {
   padding-right: 0;
   padding-left: 0;
   text-align: center;
-  width: 100vw;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   position: relative;
   bottom: 0;
   margin-top: auto;
