@@ -11,117 +11,9 @@
       <h1>Fotografia portretowa Jakub Madejczyk</h1>
     </header>
     <div id="container">
-      <section>
-        <div class="photo">
-          <img
-            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0001.jpg"
-            alt="Zdjęcie"
-            onclick="openImg(src)"
-          />
-        </div>
-        <div class="photo">
-          <img
-            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0002.jpg"
-            alt="Zdjęcie"
-            onclick="openImg(src)"
-          />
-        </div>
-        <div class="photo">
-          <img
-            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0003.jpg"
-            alt="Zdjęcie"
-            onclick="openImg(src)"
-          />
-        </div>
-        <div class="photo">
-          <img
-            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0004.jpg"
-            alt="Zdjęcie"
-            onclick="openImg(src)"
-          />
-        </div>
-        <div class="photo">
-          <img
-            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0005.jpg"
-            alt="Zdjęcie"
-            onclick="openImg(src)"
-          />
-        </div>
-      </section>
-      <section>
-        <div class="photo">
-          <img
-            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0006.jpg"
-            alt="Zdjęcie"
-            onclick="openImg(src)"
-          />
-        </div>
-        <div class="photo">
-          <img
-            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0007.jpg"
-            alt="Zdjęcie"
-            onclick="openImg(src)"
-          />
-        </div>
-        <div class="photo">
-          <img
-            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0008.jpg"
-            alt="Zdjęcie"
-            onclick="openImg(src)"
-          />
-        </div>
-        <div class="photo">
-          <img
-            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0009.jpg"
-            alt="Zdjęcie"
-            onclick="openImg(src)"
-          />
-        </div>
-        <div class="photo">
-          <img
-            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0010.jpg"
-            alt="Zdjęcie"
-            onclick="openImg(src)"
-          />
-        </div>
-      </section>
-      <section>
-        <div class="photo">
-          <img
-            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0011.jpg"
-            alt="Zdjęcie"
-            onclick="openImg(src)"
-          />
-        </div>
-        <div class="photo">
-          <img
-            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0012.jpg"
-            alt="Zdjęcie"
-            onclick="openImg(src)"
-          />
-        </div>
-        <div class="photo">
-          <img
-            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0013.jpg"
-            alt="Zdjęcie"
-            onclick="openImg(src)"
-          />
-        </div>
-        <div class="photo">
-          <img
-            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0014.jpg"
-            alt="Zdjęcie"
-            onclick="openImg(src)"
-          />
-        </div>
-        <div class="photo">
-          <img
-            src="C:\Users\jbmk0\Documents\coding\Portfolio\images\img0015.jpg"
-            alt="Zdjęcie"
-            onclick="openImg(src)"
-          />
-        </div>
-      </section>
+      <section id="s1"></section>
+      <section id="s2"></section>
+      <section id="s3"></section>
     </div>
 
     <footer>
@@ -132,6 +24,46 @@
         // window.open(src);
         location.href = src.slice(0, -4) + "_.jpg";
       }
+
+      const photos = [
+        "images/DSC02003.JPG",
+        "images/DSC02045.jpg",
+        "images/DSC02026.jpg",
+        "images/DSC02023.JPG",
+        "images/DSC01797_1.jpg",
+        "images/DSC01953.jpg",
+        "images/DSC01684.jpg",
+        "images/Img0001.jpg",
+        "images/Img0002.jpg",
+        "images/Img0003.jpg",
+        "images/Img0006.jpg",
+        "images/Img0007.jpg",
+        "images/Img0008.jpg",
+        "images/Img0004.jpg",
+        "images/Img0005.jpg",
+        "images/Img0009.jpg",
+        "images/Img0010.jpg",
+        "images/Img0014.jpg",
+        "images/Img0013.jpg",
+        "images/Img0011.jpg",
+        "images/Img0015.jpg",
+      ];
+
+      let i = 1;
+      photos.forEach((zdj) => {
+        let div = document.createElement("div");
+        div.classList.add("photo");
+        document.querySelector(`#s${i}`).appendChild(div);
+        let img = document.createElement("img");
+        img.setAttribute("src", zdj);
+        img.setAttribute("alt", "Zdjęcie");
+        img.setAttribute("onClick", "openImg(src)");
+        div.appendChild(img);
+        i++;
+        if (i == 4) {
+          i = 1;
+        }
+      });
     </script>
   </body>
 </html>
