@@ -19,6 +19,11 @@
       <section id="s3"></section>
     </div>
 
+    <div id="container2">
+      <section id="s1smol"></section>
+      <section id="s2smol"></section>
+    </div>
+
     <footer>
       <p>Copyright © 2023 Jakub Madejczyk</p>
     </footer>
@@ -52,6 +57,29 @@
         "images/Img0015.jpg",
       ];
 
+      const photos_small = [
+        "images/DSC02003.jpg",
+        "images/DSC02045.jpg",
+        "images/DSC02026.jpg",
+        "images/DSC01953.jpg",
+        "images/DSC02023.jpg",
+        "images/DSC01797_1.jpg",
+        "images/Img0003.jpg",
+        "images/DSC01684.jpg",
+        "images/Img0001.jpg",
+        "images/Img0002.jpg",
+        "images/Img0006.jpg",
+        "images/Img0008.jpg",
+        "images/Img0007.jpg",
+        "images/Img0004.jpg",
+        "images/Img0005.jpg",
+        "images/Img0010.jpg",
+        "images/Img0014.jpg",
+        "images/Img0013.jpg",
+        "images/Img0011.jpg",
+        "images/Img0015.jpg",
+      ];
+
       let i = 1;
       photos.forEach((zdj) => {
         let div = document.createElement("div");
@@ -65,12 +93,37 @@
 
         let descr = document.createElement("div");
         descr.classList.add("descr");
-        descr.innerText = "Kliknij, aby otworzyć w większej rozdzielczości";
+        descr.innerText = "Kliknij, aby powiększyć";
+
         div.appendChild(descr);
 
         i++;
         if (i == 4) {
           i = 1;
+        }
+      });
+
+      let j = 1;
+      photos_small.forEach((zdj) => {
+        let div = document.createElement("div");
+        div.classList.add("photo");
+        document.querySelector(`#s${j}smol`).appendChild(div);
+        let img = document.createElement("img");
+        img.setAttribute("src", zdj);
+        img.setAttribute("alt", "Zdjęcie");
+        img.setAttribute("onClick", "openImg(src)");
+        div.appendChild(img);
+
+        let descr = document.createElement("div");
+        descr.classList.add("descr");
+        // descr.innerText = "Kliknij, aby otworzyć w większej rozdzielczości";
+        descr.innerText = "Kliknij, aby powiększyć";
+
+        div.appendChild(descr);
+
+        j++;
+        if (j == 3) {
+          j = 1;
         }
       });
     </script>
