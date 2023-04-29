@@ -7,19 +7,26 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
 }
 /* style dla nagłówka */
 header {
   background-color: #202020;
   color: #fff;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
 }
 
 #container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 0.6vw;
 }
 /* style dla sekcji z galerią zdjęć */
 section {
@@ -28,26 +35,17 @@ section {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  /* margin: 20px; */
-  margin: 1vw;
-
-  width: 31vw;
 }
 
 /* style dla poszczególnych zdjęć */
 .photo {
-  margin: 0.25vw;
-  /* box-shadow: 2px 2px 6px rgba(0, 0, 0, 0); */
+  padding: 0px;
+  margin: 0.5vw;
+  line-height: 0;
   overflow: hidden;
-  /* max-width: 400px; */
-  /* max-height: 400px; */
-  position: relative;
-  max-width: 30vw;
 }
 img {
-  width: 30vw;
-  /* height: auto; */
-  /* height: 400px; */
+  width: 31.95vw;
 }
 
 /* style dla stopki */
@@ -62,4 +60,7 @@ footer {
   position: relative;
   bottom: 0;
   margin-top: auto;
+}
+h1 {
+  font-size: x-large;
 }
