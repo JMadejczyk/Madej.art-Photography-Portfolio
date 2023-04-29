@@ -43,7 +43,28 @@ section {
   margin: 0.5vw;
   line-height: 0;
   overflow: hidden;
+  position: relative;
+  cursor: pointer;
 }
+.descr {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.15);
+  width: 100%;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition-duration: 400ms;
+  color: #161616;
+}
+.photo:hover > .descr {
+  opacity: 1;
+}
+
 img {
   width: 31.95vw;
 }

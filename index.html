@@ -62,6 +62,12 @@
         img.setAttribute("alt", "Zdjęcie");
         img.setAttribute("onClick", "openImg(src)");
         div.appendChild(img);
+
+        let descr = document.createElement("div");
+        descr.classList.add("descr");
+        descr.innerText = "Kliknij, aby otworzyć w większej rozdzielczości";
+        div.appendChild(descr);
+
         i++;
         if (i == 4) {
           i = 1;
