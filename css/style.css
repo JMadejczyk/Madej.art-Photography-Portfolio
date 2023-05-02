@@ -19,7 +19,6 @@ body::-webkit-scrollbar {
 }
 /* style dla nagłówka */
 header {
-  /* position: relative; */
   background-color: #202020;
   color: #fff;
   padding: 10px;

@@ -10,21 +10,19 @@
   justify-content: center;
 }
 header {
-  position: absolute;
-  top: 0;
   padding: 0;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 footer {
-  position: absolute;
-  bottom: 0;
   width: 100vw;
   display: flex;
   justify-content: center;
+  margin-top: 0;
+  position: block;
 }
 body {
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin: 0;
   padding: 0;
