@@ -25,14 +25,168 @@
     />
     <!-- <meta property="twitter:image" content=""> -->
   </head>
-  <body>
-    <link rel="stylesheet" href="style.css" />
+
+  <body class="preload">
+    <link rel="stylesheet" href="css/style.css" />
     <header>
-      <h1>
+      <button id="navigation_button">
+        <svg
+          id="menu_icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-list icon"
+        >
+          <line x1="8" y1="6" x2="21" y2="6"></line>
+          <line x1="8" y1="12" x2="21" y2="12"></line>
+          <line x1="8" y1="18" x2="21" y2="18"></line>
+          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+        </svg>
+      </button>
+      <div id="menu" class="hide">
+        <a href="https://madej.art/">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-home"
+            >
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <p>Strona główna</p>
+          </div>
+        </a>
+
+        <a href="https://madej.art/krajobrazy/">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-camera"
+            >
+              <path
+                d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
+              ></path>
+              <circle cx="12" cy="13" r="4"></circle>
+            </svg>
+            <p>Krajobrazy</p>
+          </div>
+        </a>
+
+        <a href="https://madej.art/street/">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-map-pin"
+            >
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <p>Street photo</p>
+          </div>
+        </a>
+
+        <a href="https://madej.art/about/">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-user"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <p>O mnie</p>
+          </div>
+        </a>
+
+        <a href="https://madej.art/kontakt/">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-message-square"
+            >
+              <path
+                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+              ></path>
+            </svg>
+            <p>Kontakt</p>
+          </div>
+        </a>
+
+        <a href="https://www.instagram.com/qba0404/" target="_blank">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-instagram"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <p>Instagram</p>
+          </div>
+        </a>
+      </div>
+
+      <h1 class="disable-select">
         Fotografia portretowa<br />
         Jakub Madejczyk
       </h1>
     </header>
+
     <div id="container">
       <section id="s1"></section>
       <section id="s2"></section>
@@ -47,116 +201,7 @@
     <footer>
       <p>Copyright © 2023 Jakub Madejczyk</p>
     </footer>
-    <script>
-      function openImg(src) {
-        // window.open(src);
-        location.href = src.slice(0, -4) + "_.jpg";
-      }
 
-      const photos = [
-        "images/DSC02003.jpg",
-        "images/Img0055.jpg",
-        "images/Img0064.jpg",
-        "images/Img0004.jpg",
-        "images/Img0051.jpg",
-        "images/Img0063.jpg",
-        "images/Img0059.jpg",
-        "images/DSC02045.jpg",
-        "images/DSC02026.jpg",
-        "images/DSC02023.jpg",
-        "images/DSC01797_1.jpg",
-        "images/DSC01953.jpg",
-        "images/DSC01684.jpg",
-        "images/Img0006.jpg",
-        "images/Img0002.jpg",
-        "images/Img0003.jpg",
-        "images/Img0001.jpg",
-        // "images/Img0007.jpg",
-        "images/Img0010.jpg",
-        "images/Img0008.jpg",
-        "images/Img0005.jpg",
-        // "images/Img0009.jpg",
-        "images/Img0014.jpg",
-        "images/Img0011.jpg",
-        "images/Img0015.jpg",
-        "images/Img0013.jpg",
-      ];
-
-      const photos_small = [
-        "images/DSC02003.jpg",
-        "images/Img0055.jpg",
-        "images/Img0004.jpg",
-        "images/Img0051.jpg",
-        "images/Img0063.jpg",
-        "images/DSC02045.jpg",
-        "images/Img0059.jpg",
-        "images/Img0064.jpg",
-        "images/DSC02026.jpg",
-        "images/DSC02023.jpg",
-        "images/DSC01797_1.jpg",
-        "images/DSC01953.jpg",
-        "images/DSC01684.jpg",
-        // "images/Img0001.jpg",
-        "images/Img0002.jpg",
-        "images/Img0003.jpg",
-        "images/Img0006.jpg",
-        "images/Img0007.jpg",
-        "images/Img0008.jpg",
-        "images/Img0005.jpg",
-        // "images/Img0009.jpg",
-        "images/Img0010.jpg",
-        "images/Img0014.jpg",
-        "images/Img0011.jpg",
-        "images/Img0015.jpg",
-        "images/Img0013.jpg",
-      ];
-
-      let i = 1;
-      photos.forEach((zdj) => {
-        let div = document.createElement("div");
-        div.classList.add("photo");
-        document.querySelector(`#s${i}`).appendChild(div);
-        let img = document.createElement("img");
-        img.setAttribute("src", zdj);
-        img.setAttribute("alt", "Zdjęcie");
-        img.setAttribute("onClick", "openImg(src)");
-        div.appendChild(img);
-
-        let descr = document.createElement("div");
-        descr.classList.add("descr");
-        descr.innerText = "Kliknij, aby powiększyć";
-
-        div.appendChild(descr);
-
-        i++;
-        if (i == 4) {
-          i = 1;
-        }
-      });
-
-      let j = 1;
-      photos_small.forEach((zdj) => {
-        let div = document.createElement("div");
-        div.classList.add("photo");
-        document.querySelector(`#s${j}smol`).appendChild(div);
-        let img = document.createElement("img");
-        img.setAttribute("src", zdj);
-        img.setAttribute("alt", "Zdjęcie");
-        img.setAttribute("onClick", "openImg(src)");
-        div.appendChild(img);
-
-        let descr = document.createElement("div");
-        descr.classList.add("descr");
-        // descr.innerText = "Kliknij, aby otworzyć w większej rozdzielczości";
-        descr.innerText = "Kliknij, aby powiększyć";
-
-        div.appendChild(descr);
-
-        j++;
-        if (j == 3) {
-          j = 1;
-        }
-      });
-    </script>
+    <script src="js/script.js"></script>
   </body>
 </html>
