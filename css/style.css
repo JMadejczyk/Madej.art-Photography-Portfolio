@@ -236,3 +236,9 @@ a {
   color: #fff;
   text-decoration: none;
 }
+html {
+  height: -webkit-fill-avalible;
+}
+body {
+  height: -webkit-fill-avalible;
+}
