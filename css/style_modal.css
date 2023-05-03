@@ -21,6 +21,7 @@
   max-width: 800px; */
   overflow: hidden;
   border-radius: 4px;
+  position: relative;
 }
 
 .modal__top {
@@ -28,8 +29,15 @@
   align-items: center;
   /* background-color: #353535; */
   background-color: transparent;
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  z-index: 1500;
+  opacity: 0;
 }
-
+.modal__top:hover {
+  opacity: 1;
+}
 .modal__content {
   display: flex;
 }
@@ -91,7 +99,7 @@
   background: none;
   border: none;
   outline: none;
-  color: #eeeeee9c;
+  color: #eeeeee;
   padding-left: 10px;
 }
 .modal__content div.photo {
