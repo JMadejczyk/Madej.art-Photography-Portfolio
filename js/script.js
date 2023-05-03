@@ -1,7 +1,7 @@
-function openImg(src) {
-  // window.open(src);
-  location.href = src.slice(0, -4) + "_.jpg";
-}
+// function openImg(src) {
+//   // window.open(src);
+//   location.href = src.slice(0, -4) + "_.jpg";
+// }
 
 const photos = [
   "images/DSC02003.jpg",
@@ -14,7 +14,7 @@ const photos = [
   "images/DSC02045.jpg",
   "images/DSC02026.jpg",
   "images/DSC02023.jpg",
-  "images/DSC01797_1.jpg",
+  "images/DSC01797.jpg",
   "images/DSC01953.jpg",
   "images/DSC01684.jpg",
   "images/Img0006.jpg",
@@ -43,7 +43,7 @@ const photos_small = [
   "images/Img0064.jpg",
   "images/DSC02026.jpg",
   "images/DSC02023.jpg",
-  "images/DSC01797_1.jpg",
+  "images/DSC01797.jpg",
   "images/DSC01953.jpg",
   "images/DSC01684.jpg",
   // "images/Img0001.jpg",
@@ -73,7 +73,7 @@ photos.forEach((zdj) => {
   let img = document.createElement("img");
   img.setAttribute("src", zdj);
   img.setAttribute("alt", "Zdjęcie");
-  img.setAttribute("onClick", "openImg(src)");
+  img.setAttribute("onClick", "showModal(src)");
   img.classList.add("foto");
   div.appendChild(img);
 
@@ -97,7 +97,7 @@ photos_small.forEach((zdj) => {
   let img = document.createElement("img");
   img.setAttribute("src", zdj);
   img.setAttribute("alt", "Zdjęcie");
-  img.setAttribute("onClick", "openImg(src)");
+  img.setAttribute("onClick", "showModal(src)");
   img.classList.add("foto");
   div.appendChild(img);
 
@@ -125,17 +125,6 @@ document
       document.querySelector("#menu").classList.remove("hide");
     }
   });
-// document
-// .querySelector("#navigation_button")
-// .addEventListener("click", function () {
-//   document.querySelector("#menu").classList.toggle("show");
-// });
-// document
-//   .querySelector(":not(#navigation_button)")
-//   .addEventListener("click", function () {
-//     document.querySelector("#menu").classList.remove("show");
-//     console.log("not");
-//   });
 
 document.querySelector("body").addEventListener("click", (evt) => {
   // console.log(evt);
@@ -147,7 +136,7 @@ document.querySelector("body").addEventListener("click", (evt) => {
     evt.target != menu &&
     !menu.contains(evt.target)
   ) {
-    console.log("Dupa dupa");
+    // console.log("Dupa dupa");
     document.querySelector("#menu").classList.remove("show");
     document.querySelector("#menu").classList.add("hide");
   }

@@ -1,7 +1,7 @@
-function openImg(src) {
-  // window.open(src);
-  location.href = src.slice(0, -4) + "_.jpg";
-}
+// function openImg(src) {
+//   // window.open(src);
+//   location.href = src.slice(0, -4) + "_.jpg";
+// }
 
 const photos = [
   "street/Img0001.jpg",
@@ -37,7 +37,7 @@ photos.forEach((zdj) => {
   let img = document.createElement("img");
   img.setAttribute("src", zdj);
   img.setAttribute("alt", "Zdjęcie");
-  img.setAttribute("onClick", "openImg(src)");
+  img.setAttribute("onClick", "showModal(src)");
   img.classList.add("foto");
   div.appendChild(img);
 
@@ -61,7 +61,7 @@ photos_small.forEach((zdj) => {
   let img = document.createElement("img");
   img.setAttribute("src", zdj);
   img.setAttribute("alt", "Zdjęcie");
-  img.setAttribute("onClick", "openImg(src)");
+  img.setAttribute("onClick", "showModal(src)");
   img.classList.add("foto");
   div.appendChild(img);
 
@@ -100,7 +100,7 @@ document.querySelector("body").addEventListener("click", (evt) => {
     evt.target != menu &&
     !menu.contains(evt.target)
   ) {
-    console.log("Dupa dupa");
+    // console.log("Dupa dupa");
     document.querySelector("#menu").classList.remove("show");
     document.querySelector("#menu").classList.add("hide");
   }

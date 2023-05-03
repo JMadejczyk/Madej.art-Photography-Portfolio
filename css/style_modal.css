@@ -1,0 +1,110 @@
+.modal {
+  --gap: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: var(--gap);
+  backdrop-filter: blur(15px);
+  background: transparent;
+  font-family: sans-serif;
+}
+
+.modal__inner {
+  background: transparent;
+  /* width: 100%;
+  max-width: 800px; */
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.modal__top {
+  display: flex;
+  align-items: center;
+  /* background-color: #353535; */
+  background-color: transparent;
+}
+
+.modal__content {
+  display: flex;
+}
+
+.modal__bottom {
+  text-align: right;
+}
+
+.modal__button:hover {
+  background: #008066;
+}
+
+.modal__back {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  cursor: pointer;
+  padding: var(--gap);
+  background: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  position: absolute;
+  left: 0;
+  color: transparent;
+  width: 50%;
+  height: 100%;
+  z-index: 1100;
+}
+.modal__back:hover {
+  color: #eeeeee;
+}
+.modal__forward {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  cursor: pointer;
+  padding: var(--gap);
+  background: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  position: absolute;
+  /* top: 45%; */
+  right: 0;
+  color: transparent;
+  width: 50%;
+  height: 100%;
+}
+.modal__forward:hover {
+  color: #eeeeee;
+}
+
+.modal__close {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: var(--gap);
+  background: none;
+  border: none;
+  outline: none;
+  color: #eeeeee9c;
+  padding-left: 10px;
+}
+.modal__content div.photo {
+  line-height: 0;
+}
+.modal__content {
+  position: relative;
+}
+.modal__content div.photo img.foto {
+  width: 100%;
+  max-width: 1000px;
+  max-height: 780px;
+}
+.hide_arrows {
+  opacity: 0;
+}
