@@ -26,6 +26,19 @@ function showModal(photoSrc) {
       `;
 
   const photos = [
+    "images/Img0100.jpg",
+    "images/Img0102.jpg",
+    "images/Img0103.jpg",
+    "images/Img0104.jpg",
+    "images/Img0108.jpg",
+    "images/Img0106.jpg",
+    "images/Img0107.jpg",
+    "images/Img0109.jpg",
+    "images/Img0111.jpg",
+    "images/Img0110.jpg",
+    "images/Img0101.jpg",
+    "images/Img0105.jpg",
+
     "images/DSC02003.jpg",
     "images/Img0055.jpg",
     "images/Img0064.jpg",
@@ -55,6 +68,19 @@ function showModal(photoSrc) {
   ];
 
   const photos_small = [
+    "images/Img0100.jpg",
+    "images/Img0102.jpg",
+    "images/Img0103.jpg",
+    "images/Img0104.jpg",
+    "images/Img0108.jpg",
+    "images/Img0106.jpg",
+    "images/Img0107.jpg",
+    "images/Img0109.jpg",
+    "images/Img0111.jpg",
+    "images/Img0110.jpg",
+    "images/Img0101.jpg",
+    "images/Img0105.jpg",
+
     "images/DSC02003.jpg",
     "images/Img0055.jpg",
     "images/Img0004.jpg",
