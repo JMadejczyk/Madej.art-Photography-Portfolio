@@ -26,6 +26,19 @@ function showModal(photoSrc) {
       `;
 
   const photos = [
+    "images/Img0200.jpg",
+    "images/Img0201.jpg",
+    "images/Img0202.jpg",
+    "images/Img0203.jpg",
+    "images/Img0211.jpg",
+    "images/Img0205.jpg",
+    "images/Img0206.jpg",
+    "images/Img0207.jpg",
+    "images/Img0208.jpg",
+    "images/Img0209.jpg",
+    "images/Img0210.jpg",
+    "images/Img0204.jpg",
+
     "images/Img0100.jpg",
     "images/Img0102.jpg",
     "images/Img0103.jpg",
@@ -68,6 +81,19 @@ function showModal(photoSrc) {
   ];
 
   const photos_small = [
+    "images/Img0200.jpg",
+    "images/Img0201.jpg",
+    "images/Img0202.jpg",
+    "images/Img0203.jpg",
+    "images/Img0211.jpg",
+    "images/Img0206.jpg",
+    "images/Img0205.jpg",
+    "images/Img0207.jpg",
+    "images/Img0208.jpg",
+    "images/Img0209.jpg",
+    "images/Img0210.jpg",
+    "images/Img0204.jpg",
+
     "images/Img0100.jpg",
     "images/Img0102.jpg",
     "images/Img0103.jpg",
@@ -105,8 +131,6 @@ function showModal(photoSrc) {
     "images/Img0010.jpg",
     "images/Img0014.jpg",
     "images/Img0011.jpg",
-    "images/Img0015.jpg",
-    "images/Img0013.jpg",
   ];
 
   modal.querySelector(".modal__close").addEventListener("click", () => {
