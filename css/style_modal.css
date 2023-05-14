@@ -11,6 +11,7 @@
   box-sizing: border-box;
   padding: var(--gap);
   backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   background: transparent;
   font-family: sans-serif;
 }
@@ -112,6 +113,7 @@
   width: 100%;
   max-width: 1000px;
   max-height: 780px;
+  object-fit: contain;
 }
 .hide_arrows {
   opacity: 0;
