@@ -55,10 +55,7 @@ button {
   cursor: pointer;
   user-select: none;
 }
-div {
-  user-select: none;
-}
-p {
+img {
   user-select: none;
 }
 

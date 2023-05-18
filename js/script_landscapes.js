@@ -28,6 +28,7 @@ let i = 1;
 photos.forEach((zdj) => {
   let div = document.createElement("div");
   div.classList.add("photo");
+  div.classList.add("disable-select");
   document.querySelector(`#s${i}`).appendChild(div);
   let img = document.createElement("img");
   img.setAttribute("src", zdj);
@@ -52,6 +53,7 @@ let j = 1;
 photos_small.forEach((zdj) => {
   let div = document.createElement("div");
   div.classList.add("photo");
+  div.classList.add("disable-select");
   document.querySelector(`#s${j}smol`).appendChild(div);
   let img = document.createElement("img");
   img.setAttribute("src", zdj);
@@ -93,7 +95,7 @@ document.querySelector("body").addEventListener("click", (evt) => {
     evt.target != menu &&
     !menu.contains(evt.target)
   ) {
-    console.log("Dupa dupa");
+    // console.log("Dupa dupa");
     document.querySelector("#menu").classList.remove("show");
     document.querySelector("#menu").classList.add("hide");
   }
