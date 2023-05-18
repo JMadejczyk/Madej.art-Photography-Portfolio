@@ -3,10 +3,9 @@
 //   location.href = src.slice(0, -4) + "_.jpg";
 // }
 let divvv = document.querySelectorAll("div");
-foreach(ddd in divvv){
-  ddd.classList.add(disable-select);
-}
-
+divvv.forEach((el) => {
+  el.classList.add("disable-select");
+});
 
 const photos = [
   "images/Img0200.jpg",

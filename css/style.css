@@ -55,9 +55,6 @@ button {
   cursor: pointer;
   user-select: none;
 }
-img {
-  user-select: none;
-}
 
 .icon {
   width: 30px;
