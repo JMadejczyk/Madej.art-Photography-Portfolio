@@ -109,12 +109,39 @@
 .modal__content {
   position: relative;
 }
-.modal__content div.photo img.foto {
+/* .modal__content div.photo img.foto {
   width: 100%;
   max-width: 1000px;
   max-height: 780px;
   object-fit: contain;
-}
+} */
 .hide_arrows {
   opacity: 0;
+}
+
+@media only screen and (max-width: 1920px) {
+  .modal__content div.photo img.foto {
+    width: 100%;
+    max-width: 1000px;
+    max-height: 780px;
+    object-fit: contain;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .modal__content div.photo img.foto {
+    width: 100%;
+    max-width: 1400px;
+    max-height: 1092px;
+    object-fit: contain;
+  }
+}
+
+@media only screen and (min-width: 3840px) {
+  .modal__content div.photo img.foto {
+    width: 100%;
+    max-width: 2000px;
+    max-height: 1560px;
+    object-fit: contain;
+  }
 }

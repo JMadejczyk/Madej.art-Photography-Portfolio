@@ -250,3 +250,30 @@ html {
 body {
   height: -webkit-fill-avalible;
 }
+
+@media only screen and (max-width: 1920px) {
+  #container {
+    max-width: 1000px;
+  }
+  #container2 {
+    max-width: 1000px;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  #container {
+    max-width: 1400px;
+  }
+  #container2 {
+    max-width: 1400px;
+  }
+}
+
+@media only screen and (min-width: 3840px) {
+  #container {
+    max-width: 2000px;
+  }
+  #container2 {
+    max-width: 2000px;
+  }
+}
