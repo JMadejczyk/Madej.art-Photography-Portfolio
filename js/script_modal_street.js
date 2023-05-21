@@ -26,21 +26,35 @@ function showModal(photoSrc) {
       `;
 
   const photos = [
-    "street/Img0001.jpg",
-    "street/Img0006.jpg",
+    "street/Img0008.jpg",
+    "street/Img0011.jpg",
     "street/Img0003.jpg",
     "street/Img0007.jpg",
+
     "street/Img0004.jpg",
     "street/Img0005.jpg",
+    "street/Img0010.jpg",
+    "street/Img0001.jpg",
+    "street/Img0009.jpg",
+
+    "street/Img0006.jpg",
     "street/Img0002.jpg",
+
+    ,
   ];
 
   const photos_small = [
-    "street/Img0001.jpg",
-    "street/Img0007.jpg",
+    "street/Img0008.jpg",
+    "street/Img0011.jpg",
     "street/Img0003.jpg",
+    "street/Img0007.jpg",
+
     "street/Img0004.jpg",
     "street/Img0005.jpg",
+    "street/Img0010.jpg",
+    "street/Img0001.jpg",
+    "street/Img0009.jpg",
+
     "street/Img0006.jpg",
     "street/Img0002.jpg",
   ];

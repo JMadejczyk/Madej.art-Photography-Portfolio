@@ -9,6 +9,8 @@ const photos = [
   "landscapes/Img0003.jpg",
   "landscapes/Img0004.jpg",
   "landscapes/Img0005.jpg",
+  "landscapes/Img0006.jpg",
+
   ,
 ];
 
@@ -18,6 +20,7 @@ const photos_small = [
   "landscapes/Img0003.jpg",
   "landscapes/Img0004.jpg",
   "landscapes/Img0005.jpg",
+  "landscapes/Img0006.jpg",
 ];
 
 setTimeout(function () {

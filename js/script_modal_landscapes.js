@@ -31,6 +31,7 @@ function showModal(photoSrc) {
     "landscapes/Img0003.jpg",
     "landscapes/Img0004.jpg",
     "landscapes/Img0005.jpg",
+    "landscapes/Img0006.jpg",
   ];
 
   const photos_small = [
@@ -39,6 +40,7 @@ function showModal(photoSrc) {
     "landscapes/Img0003.jpg",
     "landscapes/Img0004.jpg",
     "landscapes/Img0005.jpg",
+    "landscapes/Img0006.jpg",
   ];
 
   modal.querySelector(".modal__close").addEventListener("click", () => {
