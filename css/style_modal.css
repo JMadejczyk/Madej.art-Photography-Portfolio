@@ -119,6 +119,17 @@
   opacity: 0;
 }
 
+@media only screen and (max-width: 1200px) {
+  .modal__forward {
+    color: #eeeeee;
+    opacity: 0.5;
+  }
+  .modal__back {
+    color: #eeeeee;
+    opacity: 0.5;
+  }
+}
+
 @media only screen and (max-width: 1920px) {
   .modal__content div.photo img.foto {
     width: 100%;
