@@ -8,6 +8,15 @@ divvv.forEach((el) => {
 });
 
 const photos = [
+  "images/Img0608.jpg",
+  "images/Img0607.jpg",
+  "images/Img0600.jpg",
+  "images/Img0601.jpg",
+  "images/Img0605.jpg",
+  "images/Img0603.jpg",
+  "images/Img0604.jpg",
+  "images/Img0602.jpg",
+  "images/Img0606.jpg",
   "images/Img0500.jpg",
   "images/Img0501.jpg",
   "images/Img0502.jpg",
@@ -101,6 +110,15 @@ const photos = [
 ];
 
 const photos_small = [
+  "images/Img0608.jpg",
+  "images/Img0607.jpg",
+  "images/Img0600.jpg",
+  "images/Img0601.jpg",
+  "images/Img0605.jpg",
+  "images/Img0603.jpg",
+  "images/Img0604.jpg",
+  "images/Img0602.jpg",
+  "images/Img0606.jpg",
   "images/Img0500.jpg",
   "images/Img0501.jpg",
   "images/Img0502.jpg",
