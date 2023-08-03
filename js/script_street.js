@@ -17,8 +17,6 @@ const photos = [
 
   "street/Img0006.jpg",
   "street/Img0002.jpg",
-
-  ,
 ];
 
 const photos_small = [
