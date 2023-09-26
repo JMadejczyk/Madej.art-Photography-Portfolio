@@ -378,31 +378,31 @@ setTimeout(function () {
 // });
 // // console.log(imgHeights);
 
-// let j = 1;
-// photos_small.forEach((zdj) => {
-//   let div = document.createElement("div");
-//   div.classList.add("photo");
-//   div.classList.add("disable-select");
-//   document.querySelector(`#s${j}smol`).appendChild(div);
-//   let img = document.createElement("img");
-//   img.setAttribute("src", zdj);
-//   img.setAttribute("alt", "Zdjęcie");
-//   img.setAttribute("onClick", "showModal(src)");
-//   img.classList.add("foto");
-//   div.appendChild(img);
+let j = 1;
+photos_small.forEach((zdj) => {
+  let div = document.createElement("div");
+  div.classList.add("photo");
+  div.classList.add("disable-select");
+  document.querySelector(`#s${j}smol`).appendChild(div);
+  let img = document.createElement("img");
+  img.setAttribute("src", zdj);
+  img.setAttribute("alt", "Zdjęcie");
+  img.setAttribute("onClick", "showModal(src)");
+  img.classList.add("foto");
+  div.appendChild(img);
 
-//   let descr = document.createElement("div");
-//   descr.classList.add("descr");
-//   // descr.innerText = "Kliknij, aby otworzyć w większej rozdzielczości";
-//   descr.innerText = "Kliknij, aby powiększyć";
+  let descr = document.createElement("div");
+  descr.classList.add("descr");
+  // descr.innerText = "Kliknij, aby otworzyć w większej rozdzielczości";
+  descr.innerText = "Kliknij, aby powiększyć";
 
-//   div.appendChild(descr);
+  div.appendChild(descr);
 
-//   j++;
-//   if (j == 3) {
-//     j = 1;
-//   }
-// });
+  j++;
+  if (j == 3) {
+    j = 1;
+  }
+});
 
 // let show = false;
 document
