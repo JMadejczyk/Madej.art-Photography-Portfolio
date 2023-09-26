@@ -277,56 +277,132 @@ setTimeout(function () {
   document.body.className = "";
 }, 350);
 
-let i = 1;
+let images = [];
 photos.forEach((zdj) => {
-  let div = document.createElement("div");
-  div.classList.add("photo");
-  div.classList.add("disable-select");
-  document.querySelector(`#s${i}`).appendChild(div);
   let img = document.createElement("img");
   img.setAttribute("src", zdj);
   img.setAttribute("alt", "Zdjęcie");
   img.setAttribute("onClick", "showModal(src)");
   img.classList.add("foto");
-  div.appendChild(img);
+  // div.classList.add("loading");
+  img.loading = "lazy";
+  images.push(img);
 
-  let descr = document.createElement("div");
-  descr.classList.add("descr");
-  descr.innerText = "Kliknij, aby powiększyć";
-
-  div.appendChild(descr);
-
-  i++;
-  if (i == 4) {
-    i = 1;
-  }
+  // div.style.zIndex = "100";
+  // img.classList.add("blur");
+  // img.onload = () => {
+  // imgHeights[zdj] = img.height;
+  // div.style.height = imgHeights[zdj];
+  // div.classList.remove("loading");
+  // img.classList.remove("blur");
+  // };
 });
+console.log(images);
 
-let j = 1;
-photos_small.forEach((zdj) => {
-  let div = document.createElement("div");
-  div.classList.add("photo");
-  div.classList.add("disable-select");
-  document.querySelector(`#s${j}smol`).appendChild(div);
-  let img = document.createElement("img");
-  img.setAttribute("src", zdj);
-  img.setAttribute("alt", "Zdjęcie");
-  img.setAttribute("onClick", "showModal(src)");
-  img.classList.add("foto");
-  div.appendChild(img);
+setTimeout(function () {
+  let ii = 1;
+  function step(jj) {
+    let div = document.createElement("div");
+    div.classList.add("photo");
+    div.classList.add("disable-select");
+    // for (let x = 10; x > 0; x--) {
+    //   div.appendChild(document.createElement("div")).classList.add("wave");
+    // }
 
-  let descr = document.createElement("div");
-  descr.classList.add("descr");
-  // descr.innerText = "Kliknij, aby otworzyć w większej rozdzielczości";
-  descr.innerText = "Kliknij, aby powiększyć";
+    var img = images[jj++];
 
-  div.appendChild(descr);
+    // console.log("dupa1");
+    // img.classList.add("blur");
+    // console.log(images[jj - 1]);
+    div.appendChild(img);
+    document.querySelector(`#s${ii}`).appendChild(div);
+    let descr = document.createElement("div");
+    descr.classList.add("descr");
+    descr.innerText = "Kliknij, aby powiększyć";
+    div.appendChild(descr);
 
-  j++;
-  if (j == 3) {
-    j = 1;
+    img.onload = function () {
+      // for (let x = 10; x > 0; x--) {
+      //   const child = document.querySelector(".wave");
+      //   div.removeChild(child);
+      // }
+      // img.classList.remove("blur");
+      // console.log(images[jj - 1]);
+      ii++;
+      if (ii == 4) {
+        ii = 1;
+      }
+      // console.log("dupa1");
+      step(jj);
+    };
+    img.src = images[jj - 1].src;
   }
-});
+
+  step(0);
+}, 200);
+
+// let i = 1;
+// // let imgHeights = {};
+// photos.forEach((zdj) => {
+//   let div = document.createElement("div");
+//   div.classList.add("photo");
+//   div.classList.add("disable-select");
+//   document.querySelector(`#s${i}`).appendChild(div);
+//   let img = document.createElement("img");
+//   img.setAttribute("src", zdj);
+//   img.setAttribute("alt", "Zdjęcie");
+//   img.setAttribute("onClick", "showModal(src)");
+//   img.classList.add("foto");
+//   // div.classList.add("loading");
+//   img.loading = "lazy";
+//   div.appendChild(img);
+//   // div.style.zIndex = "100";
+//   img.classList.add("blur");
+//   img.onload = () => {
+//     // imgHeights[zdj] = img.height;
+//     // div.style.height = imgHeights[zdj];
+//     // div.classList.remove("loading");
+//     img.classList.remove("blur");
+//   };
+
+//   let descr = document.createElement("div");
+//   descr.classList.add("descr");
+//   descr.innerText = "Kliknij, aby powiększyć";
+
+//   div.appendChild(descr);
+
+//   i++;
+//   if (i == 4) {
+//     i = 1;
+//   }
+// });
+// // console.log(imgHeights);
+
+// let j = 1;
+// photos_small.forEach((zdj) => {
+//   let div = document.createElement("div");
+//   div.classList.add("photo");
+//   div.classList.add("disable-select");
+//   document.querySelector(`#s${j}smol`).appendChild(div);
+//   let img = document.createElement("img");
+//   img.setAttribute("src", zdj);
+//   img.setAttribute("alt", "Zdjęcie");
+//   img.setAttribute("onClick", "showModal(src)");
+//   img.classList.add("foto");
+//   div.appendChild(img);
+
+//   let descr = document.createElement("div");
+//   descr.classList.add("descr");
+//   // descr.innerText = "Kliknij, aby otworzyć w większej rozdzielczości";
+//   descr.innerText = "Kliknij, aby powiększyć";
+
+//   div.appendChild(descr);
+
+//   j++;
+//   if (j == 3) {
+//     j = 1;
+//   }
+// });
 
 // let show = false;
 document
