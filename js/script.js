@@ -6,7 +6,6 @@ let divvv = document.querySelectorAll("div");
 divvv.forEach((el) => {
   el.classList.add("disable-select");
 });
-
 const photos = [
   "images/Img0801.jpg",
   "images/Img0802.jpg",
@@ -18,30 +17,31 @@ const photos = [
   "images/Img0805.jpg",
   "images/Img0806.jpg",
   "images/Img0807.jpg",
+  "images/Img0816.jpg",
   "images/Img0808.jpg",
+
   // "images/Img0809.jpg",
   "images/Img0810.jpg",
-  "images/Img0811.jpg",
   // "images/Img0812.jpg",
   // "images/Img0813.jpg",
-  "images/Img0814.jpg",
-  // "images/Img0815.jpg",
-  "images/Img0816.jpg",
-  "images/Img0817.jpg",
   "images/Img0821.jpg",
+  // "images/Img0815.jpg",
+  "images/Img0811.jpg",
+  "images/Img0817.jpg",
+  "images/Img0814.jpg",
 
   "images/Img0900.jpg",
   "images/Img0901.jpg",
   "images/Img0902.jpg",
-  "images/Img0903.jpg",
+  "images/Img0702.jpg",
 
   "images/Img0703.jpg",
-  "images/Img0702.jpg",
+  "images/Img0903.jpg",
   // "images/Img0701.jpg",
   "images/Img0704.jpg",
-  "images/Img0700.jpg",
-
   "images/Img0607.jpg",
+
+  "images/Img0700.jpg",
   "images/Img0605.jpg",
   "images/Img0600.jpg",
   // "images/Img0601.jpg",
@@ -118,7 +118,7 @@ const photos = [
   // "images/Img0105.jpg",
 
   // "images/DSC02003.jpg",
-  "images/Img0055.jpg",
+  // "images/Img0055.jpg",
   // "images/Img0064.jpg",
   // "images/Img0004.jpg",
   // "images/Img0051.jpg",
@@ -166,29 +166,29 @@ const photos_small = [
   // "images/Img0815.jpg",
   "images/Img0816.jpg",
   "images/Img0817.jpg",
-  "images/Img0821.jpg",
 
   "images/Img0900.jpg",
+  "images/Img0821.jpg",
   "images/Img0901.jpg",
   "images/Img0902.jpg",
-  "images/Img0903.jpg",
-
   "images/Img0703.jpg",
+
+  "images/Img0903.jpg",
   "images/Img0702.jpg",
   // "images/Img0701.jpg",
   "images/Img0704.jpg",
-  "images/Img0700.jpg",
-
   "images/Img0607.jpg",
+
+  "images/Img0700.jpg",
   "images/Img0605.jpg",
-  "images/Img0600.jpg",
-  // "images/Img0601.jpg",
   "images/Img0608.jpg",
-  "images/Img0603.jpg",
-  "images/Img0604.jpg",
+  // "images/Img0601.jpg",
+  "images/Img0600.jpg",
   "images/Img0602.jpg",
   "images/Img0606.jpg",
+  "images/Img0603.jpg",
   "images/Img0500.jpg",
+  "images/Img0604.jpg",
   "images/Img0501.jpg",
   "images/Img0502.jpg",
   "images/Img0503.jpg",
@@ -220,16 +220,16 @@ const photos_small = [
   "images/Img0403.jpg",
   "images/Img0413.jpg",
 
-  "images/Img0405.jpg",
-
   "images/Img0305.jpg",
+
+  "images/Img0405.jpg",
   "images/Img0300.jpg",
   // "images/Img0301.jpg",
   "images/Img0302.jpg",
   // "images/Img0303.jpg",
-  "images/Img0304.jpg",
-
   "images/Img0200.jpg",
+
+  "images/Img0304.jpg",
   "images/Img0201.jpg",
   // "images/Img0205.jpg",
   "images/Img0203.jpg",
@@ -256,7 +256,7 @@ const photos_small = [
   // "images/Img0105.jpg",
 
   // "images/DSC02003.jpg",
-  "images/Img0055.jpg",
+  // "images/Img0055.jpg",
   // "images/Img0064.jpg",
   // "images/Img0004.jpg",
   // "images/Img0051.jpg",
