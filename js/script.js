@@ -19,16 +19,21 @@ const photos = [
   "images/Img0806.jpg",
   "images/Img0807.jpg",
   "images/Img0808.jpg",
-  "images/Img0809.jpg",
+  // "images/Img0809.jpg",
   "images/Img0810.jpg",
   "images/Img0811.jpg",
-  "images/Img0812.jpg",
-  "images/Img0813.jpg",
+  // "images/Img0812.jpg",
+  // "images/Img0813.jpg",
   "images/Img0814.jpg",
-  "images/Img0815.jpg",
+  // "images/Img0815.jpg",
   "images/Img0816.jpg",
   "images/Img0817.jpg",
   "images/Img0821.jpg",
+
+  "images/Img0900.jpg",
+  "images/Img0901.jpg",
+  "images/Img0902.jpg",
+  "images/Img0903.jpg",
 
   "images/Img0703.jpg",
   "images/Img0702.jpg",
@@ -51,7 +56,7 @@ const photos = [
   "images/Img0503.jpg",
   "images/Img0504.jpg",
   "images/Img0505.jpg",
-  "images/Img0506.jpg",
+  // "images/Img0506.jpg",
   "images/Img0507.jpg",
   "images/Img0508.jpg",
   "images/Img0509.jpg",
@@ -152,16 +157,21 @@ const photos_small = [
   "images/Img0806.jpg",
   "images/Img0807.jpg",
   "images/Img0808.jpg",
-  "images/Img0809.jpg",
+  // "images/Img0809.jpg",
   "images/Img0810.jpg",
   "images/Img0811.jpg",
-  "images/Img0812.jpg",
-  "images/Img0813.jpg",
+  // "images/Img0812.jpg",
+  // "images/Img0813.jpg",
   "images/Img0814.jpg",
-  "images/Img0815.jpg",
+  // "images/Img0815.jpg",
   "images/Img0816.jpg",
   "images/Img0817.jpg",
   "images/Img0821.jpg",
+
+  "images/Img0900.jpg",
+  "images/Img0901.jpg",
+  "images/Img0902.jpg",
+  "images/Img0903.jpg",
 
   "images/Img0703.jpg",
   "images/Img0702.jpg",
@@ -184,7 +194,7 @@ const photos_small = [
   "images/Img0503.jpg",
   "images/Img0504.jpg",
   "images/Img0505.jpg",
-  "images/Img0506.jpg",
+  // "images/Img0506.jpg",
   "images/Img0507.jpg",
   "images/Img0508.jpg",
   "images/Img0509.jpg",
@@ -280,12 +290,15 @@ setTimeout(function () {
 let images = [];
 photos.forEach((zdj) => {
   let img = document.createElement("img");
-  img.setAttribute("src", zdj);
+  img.setAttribute("data-src", zdj); //tutaj musi byc docelowe zdjecie
+  //rozwazyc uzycie data-srcset (to be done)
+  img.setAttribute("src", zdj); //zblurowany placeholder
   img.setAttribute("alt", "Zdjęcie");
+  img.setAttribute("loading", "lazy");
   img.setAttribute("onClick", "showModal(src)");
   img.classList.add("foto");
   // div.classList.add("loading");
-  img.loading = "lazy";
+  // img.loading = "lazy";
   images.push(img);
 
   // div.style.zIndex = "100";
@@ -297,49 +310,50 @@ photos.forEach((zdj) => {
   // img.classList.remove("blur");
   // };
 });
-console.log(images);
+// console.log(images);
 
-setTimeout(function () {
-  let ii = 1;
-  function step(jj) {
-    let div = document.createElement("div");
-    div.classList.add("photo");
-    div.classList.add("disable-select");
+let ii = 1;
+function step(jj) {
+  let div = document.createElement("div");
+  div.classList.add("photo");
+  div.classList.add("disable-select");
+  // for (let x = 10; x > 0; x--) {
+  //   div.appendChild(document.createElement("div")).classList.add("wave");
+  // }
+
+  let img = document.createElement("img");
+  img = images[jj++];
+
+  // console.log("dupa1");
+  // img.classList.add("blur");
+  // console.log(images[jj - 1]);
+  console.log(img);
+
+  div.appendChild(img);
+
+  document.querySelector(`#s${ii}`).appendChild(div);
+  let descr = document.createElement("div");
+  descr.classList.add("descr");
+  descr.innerText = "Kliknij, aby powiększyć";
+  div.appendChild(descr);
+
+  img.onload = function () {
     // for (let x = 10; x > 0; x--) {
-    //   div.appendChild(document.createElement("div")).classList.add("wave");
+    //   const child = document.querySelector(".wave");
+    //   div.removeChild(child);
     // }
-
-    var img = images[jj++];
-
-    // console.log("dupa1");
-    // img.classList.add("blur");
+    // img.classList.remove("blur");
     // console.log(images[jj - 1]);
-    div.appendChild(img);
-    document.querySelector(`#s${ii}`).appendChild(div);
-    let descr = document.createElement("div");
-    descr.classList.add("descr");
-    descr.innerText = "Kliknij, aby powiększyć";
-    div.appendChild(descr);
-
-    img.onload = function () {
-      // for (let x = 10; x > 0; x--) {
-      //   const child = document.querySelector(".wave");
-      //   div.removeChild(child);
-      // }
-      // img.classList.remove("blur");
-      // console.log(images[jj - 1]);
-      ii++;
-      if (ii == 4) {
-        ii = 1;
-      }
-      // console.log("dupa1");
-      step(jj);
-    };
-    img.src = images[jj - 1].src;
-  }
-
-  step(0);
-}, 200);
+    ii++;
+    if (ii == 4) {
+      ii = 1;
+    }
+    // console.log("dupa1");
+    step(jj);
+  };
+  img.src = images[jj - 1].src;
+}
+step(0);
 
 // let i = 1;
 // // let imgHeights = {};
@@ -377,6 +391,31 @@ setTimeout(function () {
 //   }
 // });
 // // console.log(imgHeights);
+
+// let images_small = [];
+// photos.forEach((zdjj) => {
+//   let imgg = document.createElement("img");
+//   imgg.setAttribute("data-src", zdjj); //tutaj musi byc docelowe zdjecie
+//   //rozwazyc uzycie data-srcset (to be done)
+//   imgg.setAttribute("src", zdjj); //zblurowany placeholder
+//   imgg.setAttribute("alt", "Zdjęcie");
+//   imgg.setAttribute("loading", "lazy");
+//   imgg.setAttribute("onClick", "showModal(src)");
+//   imgg.classList.add("foto");
+//   // div.classList.add("loading");
+//   // img.loading = "lazy";
+//   images_small.push(imgg);
+
+//   // div.style.zIndex = "100";
+//   // img.classList.add("blur");
+//   // img.onload = () => {
+//   // imgHeights[zdj] = img.height;
+//   // div.style.height = imgHeights[zdj];
+//   // div.classList.remove("loading");
+//   // img.classList.remove("blur");
+//   // };
+// });
+// // console.log(images);
 
 let j = 1;
 photos_small.forEach((zdj) => {

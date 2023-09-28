@@ -1,6 +1,6 @@
 /* style dla całej strony */
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap");
 body {
   font-family: Helvetica, Arial, sans-serif;
   /* font-family: Inter, sans-serif; */
@@ -30,6 +30,7 @@ header {
   height: 5rem;
   padding-left: 0;
   padding-right: 0;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 button {
   background-color: transparent;
@@ -78,6 +79,7 @@ button {
   display: flex;
   flex-direction: column;
   /* align-items: flex-start; */
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .show {
@@ -142,6 +144,7 @@ section {
   overflow: hidden;
   position: relative;
   cursor: pointer;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .descr {
   position: absolute;
@@ -179,6 +182,8 @@ footer {
   position: relative;
   bottom: 0;
   margin-top: auto;
+  font-family: Montserrat;
+  font-weight: 300;
 }
 h1 {
   font-size: x-large;
@@ -278,6 +283,9 @@ bodY {
   margin: 10px;
   animation: wave 1s linear infinite;
   border-radius: 20px;
+}
+header p {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .wave:nth-child(2) {
   animation-delay: 0.1s;

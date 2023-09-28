@@ -24,7 +24,6 @@ function showModal(photoSrc) {
         </div>
         </div>
       `;
-
   const photos = [
     "images/Img0801.jpg",
     "images/Img0802.jpg",
@@ -37,16 +36,21 @@ function showModal(photoSrc) {
     "images/Img0806.jpg",
     "images/Img0807.jpg",
     "images/Img0808.jpg",
-    "images/Img0809.jpg",
+    // "images/Img0809.jpg",
     "images/Img0810.jpg",
     "images/Img0811.jpg",
-    "images/Img0812.jpg",
-    "images/Img0813.jpg",
+    // "images/Img0812.jpg",
+    // "images/Img0813.jpg",
     "images/Img0814.jpg",
-    "images/Img0815.jpg",
+    // "images/Img0815.jpg",
     "images/Img0816.jpg",
     "images/Img0817.jpg",
     "images/Img0821.jpg",
+
+    "images/Img0900.jpg",
+    "images/Img0901.jpg",
+    "images/Img0902.jpg",
+    "images/Img0903.jpg",
 
     "images/Img0703.jpg",
     "images/Img0702.jpg",
@@ -69,7 +73,7 @@ function showModal(photoSrc) {
     "images/Img0503.jpg",
     "images/Img0504.jpg",
     "images/Img0505.jpg",
-    "images/Img0506.jpg",
+    // "images/Img0506.jpg",
     "images/Img0507.jpg",
     "images/Img0508.jpg",
     "images/Img0509.jpg",
@@ -170,16 +174,21 @@ function showModal(photoSrc) {
     "images/Img0806.jpg",
     "images/Img0807.jpg",
     "images/Img0808.jpg",
-    "images/Img0809.jpg",
+    // "images/Img0809.jpg",
     "images/Img0810.jpg",
     "images/Img0811.jpg",
-    "images/Img0812.jpg",
-    "images/Img0813.jpg",
+    // "images/Img0812.jpg",
+    // "images/Img0813.jpg",
     "images/Img0814.jpg",
-    "images/Img0815.jpg",
+    // "images/Img0815.jpg",
     "images/Img0816.jpg",
     "images/Img0817.jpg",
     "images/Img0821.jpg",
+
+    "images/Img0900.jpg",
+    "images/Img0901.jpg",
+    "images/Img0902.jpg",
+    "images/Img0903.jpg",
 
     "images/Img0703.jpg",
     "images/Img0702.jpg",
@@ -202,7 +211,7 @@ function showModal(photoSrc) {
     "images/Img0503.jpg",
     "images/Img0504.jpg",
     "images/Img0505.jpg",
-    "images/Img0506.jpg",
+    // "images/Img0506.jpg",
     "images/Img0507.jpg",
     "images/Img0508.jpg",
     "images/Img0509.jpg",
@@ -290,7 +299,6 @@ function showModal(photoSrc) {
     // "images/Img0015.jpg",
     // "images/Img0013.jpg",
   ];
-
   modal.querySelector(".modal__close").addEventListener("click", () => {
     document.body.removeChild(modal);
   });
