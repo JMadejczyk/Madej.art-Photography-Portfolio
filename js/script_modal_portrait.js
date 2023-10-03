@@ -16,7 +16,7 @@ function showModal(photoSrc) {
             <div class="photo">
             <img src="${
               photoSrc.slice(0, -4) + "_.jpg"
-            }" alt="zdj1" class="foto" />
+            }" alt="zdj1" class="foto_large" />
             </div>
             <button class="modal__forward" type="button">
                 <span class="material-icons">arrow_forward_ios</span>
@@ -24,6 +24,8 @@ function showModal(photoSrc) {
         </div>
         </div>
       `;
+
+  // }" alt="zdj1" class="foto" />
 
   const photos = [
     "images/Img0801.jpg",
@@ -330,7 +332,7 @@ function showModal(photoSrc) {
 
   if (window.innerWidth > 800) {
     let whole_source = document.querySelector(
-      "div.modal__content div.photo img.foto"
+      "div.modal__content div.photo img.foto_large"
     ).src;
     let source = whole_source.substring(whole_source.search("images"));
     // console.log(source);
@@ -361,7 +363,7 @@ function showModal(photoSrc) {
     }
   } else {
     let whole_source_ = document.querySelector(
-      "div.modal__content div.photo img.foto"
+      "div.modal__content div.photo img.foto_large"
     ).src;
     let source_ = whole_source_.substring(whole_source_.search("images"));
     // console.log(source_);

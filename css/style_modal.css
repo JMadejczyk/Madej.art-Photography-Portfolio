@@ -18,8 +18,8 @@
 
 .modal__inner {
   background: transparent;
-  /* width: 100%;
-  max-width: 800px; */
+  /* max-width: 100%; */
+  /* max-width: 800px; */
   overflow: hidden;
   border-radius: 4px;
   position: relative;
@@ -136,6 +136,7 @@
     max-width: 1000px;
     max-height: 780px;
     object-fit: contain;
+    /* aspect-ratio: auto; */
   }
 }
 
