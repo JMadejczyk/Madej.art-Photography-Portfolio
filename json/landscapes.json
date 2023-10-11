@@ -1,0 +1,19 @@
+{
+  "photos": [
+    "landscapes/Img0001.jpg",
+    "landscapes/Img0002.jpg",
+    "landscapes/Img0003.jpg",
+    "landscapes/Img0004.jpg",
+    "landscapes/Img0005.jpg",
+    "landscapes/Img0006.jpg"
+  ],
+
+  "photos_small": [
+    "landscapes/Img0001.jpg",
+    "landscapes/Img0002.jpg",
+    "landscapes/Img0003.jpg",
+    "landscapes/Img0004.jpg",
+    "landscapes/Img0005.jpg",
+    "landscapes/Img0006.jpg"
+  ]
+}

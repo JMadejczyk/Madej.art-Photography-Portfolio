@@ -48,7 +48,7 @@ photos.forEach((zdj) => {
   let img = document.createElement("img");
   img.setAttribute("src", zdj);
   img.setAttribute("alt", "Zdjęcie");
-  img.setAttribute("onClick", "showModal(src)");
+  img.setAttribute("onClick", "showModal(src, 'street')");
   img.classList.add("foto");
   div.appendChild(img);
 
@@ -73,7 +73,7 @@ photos_small.forEach((zdj) => {
   let img = document.createElement("img");
   img.setAttribute("src", zdj);
   img.setAttribute("alt", "Zdjęcie");
-  img.setAttribute("onClick", "showModal(src)");
+  img.setAttribute("onClick", "showModal(src, 'street')");
   img.classList.add("foto");
   div.appendChild(img);
 

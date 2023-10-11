@@ -1,6 +1,29 @@
+//how to make a global object?
+let photos = [];
+let photos_small = [];
+async function setModalType(modalType) {
+  fetch(`../json/${modalType}.json`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      // console.log(data);
+      photos = data["photos"];
+      photos_small = data["photos_small"];
+      // console.log(photos, photos_small);
+      return [photos, photos_small];
+    })
+    .catch((error) => {
+      console.error("There was a problem with the fetch operation:", error);
+    });
+}
+export { setModalType };
+
 function showModal(photoSrc) {
   const modal = document.createElement("div");
-
   modal.classList.add("modal");
   modal.innerHTML = `
         <div class="modal__inner">
@@ -16,7 +39,7 @@ function showModal(photoSrc) {
             <div class="photo">
             <img src="${
               photoSrc.slice(0, -4) + "_.jpg"
-            }" alt="zdj1" class="foto_large" />
+            }" alt="Bigger photo" class="foto_large" />
             </div>
             <button class="modal__forward" type="button">
                 <span class="material-icons">arrow_forward_ios</span>
@@ -24,22 +47,6 @@ function showModal(photoSrc) {
         </div>
         </div>
       `;
-
-  fetch("../json/portraits.json")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      // console.log(data);
-      const photos = data["photos"];
-      const photos_small = data["photos_small"];
-    })
-    .catch((error) => {
-      console.error("There was a problem with the fetch operation:", error);
-    });
 
   modal.querySelector(".modal__close").addEventListener("click", () => {
     document.body.removeChild(modal);
@@ -132,3 +139,5 @@ function showModal(photoSrc) {
     }
   }
 }
+
+export { showModal };
