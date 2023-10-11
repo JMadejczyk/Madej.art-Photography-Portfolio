@@ -119,21 +119,6 @@
   opacity: 0;
 }
 
-@media only screen and (max-width: 920px) {
-  .modal__content div.photo {
-    width: 100%;
-    max-width: 90vw;
-    /* max-height: 1092px; */
-    object-fit: contain;
-  }
-  .modal__content div.photo img.foto {
-    width: 100%;
-    max-width: 90vw;
-    /* max-height: 1092px; */
-    object-fit: contain;
-  }
-}
-
 @media only screen and (max-width: 1200px) {
   .modal__forward {
     color: #eeeeee;
