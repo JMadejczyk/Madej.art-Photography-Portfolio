@@ -172,8 +172,8 @@ section {
 .foto_large {
   /* width: 31.95vw; */
   /* width: 100%; */
-  max-height: 90vmin;
-  max-width: 90vmax;
+  max-height: 90vh;
+  max-width: 90vw;
 }
 
 /* style dla stopki */
@@ -262,9 +262,6 @@ html {
 }
 body {
   height: -webkit-fill-avalible;
-}
-.loading {
-  background-color: #fff;
 }
 .blur {
   filter: blur(10px);
