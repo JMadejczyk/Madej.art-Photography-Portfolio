@@ -210,7 +210,10 @@
       <p>Copyright © 2023 Jakub Madejczyk</p>
     </footer>
 
-    <script src="js/script.js"></script>
-    <script src="js/script_modal_portrait.js"></script>
+    <script type="module" src="js/script.js"></script>
+    <script type="module">
+      import { show_photos } from "/js/script.js";
+      show_photos("portraits");
+    </script>
   </body>
 </html>

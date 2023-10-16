@@ -1,7 +1,33 @@
+//how to make a global object?
+let photos = [];
+let photos_small = [];
+async function setModalType(modalType) {
+  fetch(`../json/${modalType}.json`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+      photos = data["photos"];
+      photos_small = data["photos_small"];
+
+      return [photos, photos_small];
+    })
+    .catch((error) => {
+      console.error("There was a problem with the fetch operation:", error);
+    });
+}
+// setModalType("portraits");
+
+export { setModalType };
+
 function showModal(photoSrc) {
   const modal = document.createElement("div");
-
   modal.classList.add("modal");
+
   modal.innerHTML = `
         <div class="modal__inner">
         <div class="modal__top">
@@ -16,7 +42,7 @@ function showModal(photoSrc) {
             <div class="photo">
             <img src="${
               photoSrc.slice(0, -4) + "_.jpg"
-            }" alt="zdj1" class="foto" />
+            }" alt="Bigger photo" class="foto_large" />
             </div>
             <button class="modal__forward" type="button">
                 <span class="material-icons">arrow_forward_ios</span>
@@ -24,40 +50,6 @@ function showModal(photoSrc) {
         </div>
         </div>
       `;
-
-  const photos = [
-    "street/Img0008.jpg",
-    "street/Img0011.jpg",
-    "street/Img0003.jpg",
-    "street/Img0007.jpg",
-
-    "street/Img0004.jpg",
-    "street/Img0005.jpg",
-    "street/Img0010.jpg",
-    "street/Img0001.jpg",
-    "street/Img0009.jpg",
-
-    "street/Img0006.jpg",
-    "street/Img0002.jpg",
-
-    ,
-  ];
-
-  const photos_small = [
-    "street/Img0008.jpg",
-    "street/Img0011.jpg",
-    "street/Img0003.jpg",
-    "street/Img0007.jpg",
-
-    "street/Img0004.jpg",
-    "street/Img0005.jpg",
-    "street/Img0010.jpg",
-    "street/Img0001.jpg",
-    "street/Img0009.jpg",
-
-    "street/Img0006.jpg",
-    "street/Img0002.jpg",
-  ];
 
   modal.querySelector(".modal__close").addEventListener("click", () => {
     document.body.removeChild(modal);
@@ -88,14 +80,21 @@ function showModal(photoSrc) {
 
   if (window.innerWidth > 800) {
     let whole_source = document.querySelector(
-      "div.modal__content div.photo img.foto"
+      "div.modal__content div.photo img.foto_large"
     ).src;
-    let source = whole_source.substring(whole_source.search("street"));
-    // console.log(source);
+
+    let source = "";
+    if (whole_source.search("images") != -1) {
+      source = whole_source.substring(whole_source.search("images"));
+    } else if (whole_source.search("landscapes") != -1) {
+      source = whole_source.substring(whole_source.search("landscapes"));
+    } else if (whole_source.search("street") != -1) {
+      source = whole_source.substring(whole_source.search("street"));
+    }
+
     let index = photos.indexOf(source.replace("_", ""));
 
     modal.querySelector(".modal__back").addEventListener("click", () => {
-      // console.log("Previous");
       if (index != 0) {
         document.body.removeChild(modal);
         showModal(photos[index - 1]);
@@ -103,8 +102,6 @@ function showModal(photoSrc) {
     });
 
     modal.querySelector(".modal__forward").addEventListener("click", () => {
-      // console.log("Next");
-
       if (index + 1 != photos.length) {
         document.body.removeChild(modal);
         showModal(photos[index + 1]);
@@ -119,10 +116,18 @@ function showModal(photoSrc) {
     }
   } else {
     let whole_source_ = document.querySelector(
-      "div.modal__content div.photo img.foto"
+      "div.modal__content div.photo img.foto_large"
     ).src;
-    let source_ = whole_source_.substring(whole_source_.search("street"));
-    // console.log(source_);
+
+    let source_ = "";
+    if (whole_source_.search("images") != -1) {
+      source_ = whole_source_.substring(whole_source_.search("images"));
+    } else if (whole_source_.search("landscapes") != -1) {
+      source_ = whole_source_.substring(whole_source_.search("landscapes"));
+    } else if (whole_source_.search("street") != -1) {
+      source_ = whole_source_.substring(whole_source_.search("street"));
+    }
+
     let index_ = photos_small.indexOf(source_.replace("_", ""));
 
     modal.querySelector(".modal__back").addEventListener("click", () => {
@@ -150,3 +155,5 @@ function showModal(photoSrc) {
     }
   }
 }
+
+export { showModal };

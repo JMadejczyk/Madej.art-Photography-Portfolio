@@ -208,7 +208,14 @@
       <p>Copyright © 2023 Jakub Madejczyk</p>
     </footer>
 
-    <script src="js/script_landscapes.js"></script>
-    <script src="js/script_modal_landscapes.js"></script>
+    <!-- <script src="js/script.js"></script> -->
+    <!-- <script src="js/script_modal_landscapes.js"></script> -->
+    <script type="module" src="js/script.js"></script>
+    <!-- <script type="module" src="js/script_modal.js"></script> -->
+    <script type="module">
+      // import { setModalType, showModal } from "./script_modal.js";
+      import { show_photos } from "/js/script.js";
+      show_photos("landscapes");
+    </script>
   </body>
 </html>
