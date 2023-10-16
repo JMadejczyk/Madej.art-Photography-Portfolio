@@ -6,6 +6,8 @@ import { setModalType, showModal } from "./script_modal.js";
 // console.log(photos);
 
 function show_photos(site) {
+  setModalType(site);
+
   fetch(`../json/${site}.json`)
     .then((response) => {
       if (!response.ok) {
@@ -145,7 +147,8 @@ function show_photos(site) {
     });
 }
 
-show_photos("portraits");
+export { show_photos };
+// show_photos("portraits");
 
 let divvv = document.querySelectorAll("div");
 divvv.forEach((el) => {
