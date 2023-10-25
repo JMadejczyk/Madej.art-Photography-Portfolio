@@ -14,7 +14,6 @@ document
   });
 
 document.querySelector("body").addEventListener("click", (evt) => {
-  // console.log(evt);
   let button = document.querySelector("#navigation_button");
   let menu = document.querySelector("#menu");
   if (
@@ -23,7 +22,6 @@ document.querySelector("body").addEventListener("click", (evt) => {
     evt.target != menu &&
     !menu.contains(evt.target)
   ) {
-    console.log("Dupa dupa");
     document.querySelector("#menu").classList.remove("show");
     document.querySelector("#menu").classList.add("hide");
   }
