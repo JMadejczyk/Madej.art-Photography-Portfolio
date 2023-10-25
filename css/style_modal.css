@@ -63,13 +63,16 @@
   background: transparent;
   position: absolute;
   left: 0;
-  color: transparent;
+  /* color: transparent; */
   width: 50%;
   height: 100%;
   z-index: 1100;
+  opacity: 0;
+  padding-left: 9px;
 }
 .modal__back:hover {
   color: #eeeeee;
+  opacity: 1;
 }
 .modal__forward {
   display: flex;
@@ -80,16 +83,19 @@
   background: none;
   border: none;
   outline: none;
-  background: transparent;
+  /* background: transparent; */
   position: absolute;
   /* top: 45%; */
   right: 0;
   color: transparent;
   width: 50%;
   height: 100%;
+  opacity: 0;
+  padding-right: 9px;
 }
 .modal__forward:hover {
   color: #eeeeee;
+  opacity: 1;
 }
 
 .modal__close {
@@ -115,11 +121,12 @@
   max-height: 780px;
   object-fit: contain;
 } */
-.hide_arrows {
-  opacity: 0;
+
+.icon {
+  opacity: 0.5;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 800px) {
   .modal__forward {
     color: #eeeeee;
     opacity: 0.5;
@@ -155,4 +162,7 @@
     max-height: 1560px;
     object-fit: contain;
   }
+}
+.hide_arrows {
+  opacity: 0 !important;
 }

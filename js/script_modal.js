@@ -32,12 +32,12 @@ function showModal(photoSrc) {
         <div class="modal__inner">
         <div class="modal__top">
             <button class="modal__close" type="button">
-            <span class="material-icons">close</span>
+            <img class="icon" src="icons/close.svg" alt="close">
             </button>
         </div>
         <div class="modal__content">
             <button class="modal__back" type="button">
-            <span class="material-icons">arrow_back_ios_new</span>
+            <img class="icon" src="icons/left.svg" alt="left"  height="2rem">
             </button>
             <div class="photo">
             <img src="${
@@ -45,7 +45,7 @@ function showModal(photoSrc) {
             }" alt="Bigger photo" class="foto_large" />
             </div>
             <button class="modal__forward" type="button">
-                <span class="material-icons">arrow_forward_ios</span>
+            <img class="icon" src="icons/right.svg" alt="right">
             </button>
         </div>
         </div>
@@ -63,7 +63,6 @@ function showModal(photoSrc) {
     let modalForward = document.querySelector(".modal__forward");
     // let modalIcons = document.querySelector("span.material-icons");
 
-    // console.log(evt.target);
     if (
       document.body.contains(modal) &&
       evt.target != button &&
@@ -94,18 +93,25 @@ function showModal(photoSrc) {
 
     let index = photos.indexOf(source.replace("_", ""));
 
-    modal.querySelector(".modal__back").addEventListener("click", () => {
+    const showNextModal = () => {
+      if (index + 1 != photos_small.length) {
+        document.body.removeChild(modal);
+        showModal(photos[index + 1]);
+      }
+    };
+    const showPreviousModal = () => {
       if (index != 0) {
         document.body.removeChild(modal);
         showModal(photos[index - 1]);
       }
+    };
+
+    modal.querySelector(".modal__back").addEventListener("click", () => {
+      showPreviousModal();
     });
 
     modal.querySelector(".modal__forward").addEventListener("click", () => {
-      if (index + 1 != photos.length) {
-        document.body.removeChild(modal);
-        showModal(photos[index + 1]);
-      }
+      showNextModal();
     });
 
     if (index + 1 == photos.length) {
@@ -130,21 +136,40 @@ function showModal(photoSrc) {
 
     let index_ = photos_small.indexOf(source_.replace("_", ""));
 
-    modal.querySelector(".modal__back").addEventListener("click", () => {
-      // console.log("Previous");
-      if (index_ != 0) {
-        document.body.removeChild(modal);
-        showModal(photos_small[index_ - 1]);
-      }
-    });
-
-    modal.querySelector(".modal__forward").addEventListener("click", () => {
-      // console.log("Next");
-
+    const showNextSmallModal = () => {
       if (index_ + 1 != photos_small.length) {
         document.body.removeChild(modal);
         showModal(photos_small[index_ + 1]);
       }
+    };
+    const showPreviousSmallModal = () => {
+      if (index_ != 0) {
+        document.body.removeChild(modal);
+        showModal(photos_small[index_ - 1]);
+      }
+    };
+
+    // window.addEventListener("keydown", (event) => {
+    //   if (document.querySelector(".modal__content")) {
+    //     if (event.key === "ArrowLeft") {
+    //       console.log("left");
+
+    //       showPreviousModal();
+    //     } else if (event.key === "ArrowRight") {
+    //       console.log("right");
+
+    //       showNextModal();
+    //     }
+    //   }
+    // });
+
+    modal.querySelector(".modal__back").addEventListener("click", () => {
+      showPreviousSmallModal();
+    });
+
+    modal.querySelector(".modal__forward").addEventListener("click", () => {
+      // console.log("Next");
+      showNextSmallModal();
     });
 
     if (index_ + 1 == photos_small.length) {
