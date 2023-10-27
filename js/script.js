@@ -1,4 +1,4 @@
-import { setModalType, showModal } from "./script_modal.js";
+import { setModalType, changeModal } from "./script_modal.js";
 
 // setModalType("portraits").then((data) => {
 //   console.log(data);
@@ -34,7 +34,9 @@ function show_photos(site) {
         img.classList.add("foto");
 
         img.addEventListener("click", () => {
-          showModal(zdj);
+          // console.log(zdj);
+          // zdj = zdj.replace(".", "_.");
+          changeModal(zdj);
         });
         images.push(img);
       });
@@ -81,7 +83,8 @@ function show_photos(site) {
         img.classList.add("foto");
 
         img.addEventListener("click", () => {
-          showModal(zdj);
+          // zdj = zdj.replace(".", "_.");
+          changeModal(zdj);
         });
         images_small.push(img);
       });

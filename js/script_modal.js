@@ -1,7 +1,9 @@
-//how to make a global object?
 let photos = [];
 let photos_small = [];
-async function setModalType(modalType) {
+let index = 0;
+let source = "";
+let isSmall = false;
+function setModalType(modalType) {
   fetch(`../json/${modalType}.json`)
     .then((response) => {
       if (!response.ok) {
@@ -10,7 +12,6 @@ async function setModalType(modalType) {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
       photos = data["photos"];
       photos_small = data["photos_small"];
 
@@ -20,11 +21,32 @@ async function setModalType(modalType) {
       console.error("There was a problem with the fetch operation:", error);
     });
 }
-// setModalType("portraits");
+
+const showNextModal = () => {
+  if (
+    (!isSmall && index + 1 != photos.length) ||
+    (isSmall && index + 1 != photos_small.length)
+  ) {
+    if (isSmall) {
+      changeModal(photos_small[index + 1]);
+    } else changeModal(photos[index + 1]);
+  }
+};
+const showPreviousModal = () => {
+  if (index != 0) {
+    if (isSmall) {
+      changeModal(photos_small[index - 1]);
+    } else changeModal(photos[index - 1]);
+  }
+};
+
+function isModal() {
+  return document.querySelector(".modal") ? true : false;
+}
 
 export { setModalType };
 
-function showModal(photoSrc) {
+function createModal(photoSrc) {
   const modal = document.createElement("div");
   modal.classList.add("modal");
 
@@ -40,9 +62,7 @@ function showModal(photoSrc) {
             <img class="icon" src="icons/left.svg" alt="left"  height="2rem">
             </button>
             <div class="photo">
-            <img src="${
-              photoSrc.slice(0, -4) + "_.jpg"
-            }" alt="Bigger photo" class="foto_large" />
+            <img src="${photoSrc}" alt="Bigger photo" class="foto_large" />
             </div>
             <button class="modal__forward" type="button">
             <img class="icon" src="icons/right.svg" alt="right">
@@ -51,135 +71,133 @@ function showModal(photoSrc) {
         </div>
       `;
 
-  modal.querySelector(".modal__close").addEventListener("click", () => {
-    document.body.removeChild(modal);
-  });
-
   document.body.appendChild(modal);
-  document.querySelector(".modal").addEventListener("click", (evt) => {
-    let button = document.querySelector(".modal__close");
-    let insideModal = document.querySelector(".modal__content");
-    let modalBack = document.querySelector(".modal__back");
-    let modalForward = document.querySelector(".modal__forward");
-    // let modalIcons = document.querySelector("span.material-icons");
+  setCurrentPhotoIndex();
+}
 
-    if (
-      document.body.contains(modal) &&
-      evt.target != button &&
-      evt.target != insideModal &&
-      evt.target != modalBack &&
-      evt.target != modalForward &&
-      !modalForward.contains(evt.target) &&
-      !modalBack.contains(evt.target)
-    ) {
-      // console.log("usunięto modal");
-      document.body.removeChild(modal);
-    }
-  });
+function setCurrentPhotoIndex() {
+  let whole_source = document.querySelector(
+    "div.modal__content div.photo img.foto_large"
+  ).src;
 
+  if (whole_source.search("images") != -1) {
+    source = whole_source.substring(whole_source.search("images"));
+  } else if (whole_source.search("landscapes") != -1) {
+    source = whole_source.substring(whole_source.search("landscapes"));
+  } else if (whole_source.search("street") != -1) {
+    source = whole_source.substring(whole_source.search("street"));
+  }
   if (window.innerWidth > 800) {
-    let whole_source = document.querySelector(
-      "div.modal__content div.photo img.foto_large"
-    ).src;
-
-    let source = "";
-    if (whole_source.search("images") != -1) {
-      source = whole_source.substring(whole_source.search("images"));
-    } else if (whole_source.search("landscapes") != -1) {
-      source = whole_source.substring(whole_source.search("landscapes"));
-    } else if (whole_source.search("street") != -1) {
-      source = whole_source.substring(whole_source.search("street"));
-    }
-
-    let index = photos.indexOf(source.replace("_", ""));
-
-    const showNextModal = () => {
-      if (index + 1 != photos_small.length) {
-        document.body.removeChild(modal);
-        showModal(photos[index + 1]);
-      }
-    };
-    const showPreviousModal = () => {
-      if (index != 0) {
-        document.body.removeChild(modal);
-        showModal(photos[index - 1]);
-      }
-    };
-
-    modal.querySelector(".modal__back").addEventListener("click", () => {
-      showPreviousModal();
-    });
-
-    modal.querySelector(".modal__forward").addEventListener("click", () => {
-      showNextModal();
-    });
-
-    if (index + 1 == photos.length) {
-      modal.querySelector(".modal__forward").classList.add("hide_arrows");
-    }
-    if (index == 0) {
-      modal.querySelector(".modal__back").classList.add("hide_arrows");
-    }
+    index = photos.indexOf(source.replace("_", ""));
+    isSmall = false;
   } else {
-    let whole_source_ = document.querySelector(
-      "div.modal__content div.photo img.foto_large"
-    ).src;
+    index = photos_small.indexOf(source.replace("_", ""));
+    isSmall = true;
+  }
+}
 
-    let source_ = "";
-    if (whole_source_.search("images") != -1) {
-      source_ = whole_source_.substring(whole_source_.search("images"));
-    } else if (whole_source_.search("landscapes") != -1) {
-      source_ = whole_source_.substring(whole_source_.search("landscapes"));
-    } else if (whole_source_.search("street") != -1) {
-      source_ = whole_source_.substring(whole_source_.search("street"));
-    }
+function checkArrows() {
+  const modal = document.querySelector(".modal");
+  if (index + 1 == photos.length) {
+    modal.querySelector(".modal__forward").classList.add("hide_arrows");
+  } else {
+    modal.querySelector(".modal__forward").classList.remove("hide_arrows");
+  }
+  if (index == 0) {
+    modal.querySelector(".modal__back").classList.add("hide_arrows");
+  } else {
+    modal.querySelector(".modal__back").classList.remove("hide_arrows");
+  }
+}
 
-    let index_ = photos_small.indexOf(source_.replace("_", ""));
+function changeModal(photoSrc) {
+  photoSrc = photoSrc.slice(0, -4) + "_.jpg";
+  if (!isModal()) {
+    createModal(photoSrc);
+    createListeners();
+  } else {
+    const photoImg = document.querySelector(
+      ".modal .modal__content .photo img"
+    );
 
-    const showNextSmallModal = () => {
-      if (index_ + 1 != photos_small.length) {
-        document.body.removeChild(modal);
-        showModal(photos_small[index_ + 1]);
-      }
-    };
-    const showPreviousSmallModal = () => {
-      if (index_ != 0) {
-        document.body.removeChild(modal);
-        showModal(photos_small[index_ - 1]);
-      }
-    };
+    photoImg.src = photoSrc;
+    setCurrentPhotoIndex();
+  }
+  checkArrows();
+}
 
-    // window.addEventListener("keydown", (event) => {
-    //   console.log("dupa");
-    //   if (document.querySelector(".modal__content")) {
-    //     if (event.key === "ArrowLeft") {
-    //       console.log("left");
+function closeModal() {
+  if (isModal()) {
+    const modal = document.querySelector(".modal");
 
-    //       showPreviousSmallModal();
-    //     } else if (event.key === "ArrowRight") {
-    //       console.log("right");
+    document
+      .querySelector(".modal__close")
+      .removeEventListener("click", closeModal);
 
-    //       showNextSmallModal();
-    //     }
-    //   }
-    // });
+    document
+      .querySelector(".modal")
+      .removeEventListener("click", modalCloseIfClickedOutside);
 
-    modal.querySelector(".modal__back").addEventListener("click", () => {
-      showPreviousSmallModal();
-    });
+    modal
+      .querySelector(".modal__back")
+      .removeEventListener("click", showPreviousModal);
 
-    modal.querySelector(".modal__forward").addEventListener("click", () => {
-      // console.log("Next");
-      showNextSmallModal();
-    });
+    modal
+      .querySelector(".modal__forward")
+      .removeEventListener("click", showNextModal);
 
-    if (index_ + 1 == photos_small.length) {
-      modal.querySelector(".modal__forward").classList.add("hide_arrows");
-    }
-    if (index_ == 0) {
-      modal.querySelector(".modal__back").classList.add("hide_arrows");
+    window.removeEventListener("keyup", checkKeyAndshowNextModal);
+    document.body.removeChild(modal);
+  }
+}
+
+function modalCloseIfClickedOutside(evt) {
+  const modal = document.querySelector(".modal");
+  const button = document.querySelector(".modal__close");
+  const insideModal = document.querySelector(".modal__content");
+  const modalBack = document.querySelector(".modal__back");
+  const modalForward = document.querySelector(".modal__forward");
+
+  if (
+    document.body.contains(modal) &&
+    evt.target != button &&
+    evt.target != insideModal &&
+    evt.target != modalBack &&
+    evt.target != modalForward &&
+    !modalForward.contains(evt.target) &&
+    !modalBack.contains(evt.target)
+  ) {
+    closeModal();
+  }
+}
+
+function checkKeyAndshowNextModal(event) {
+  if (document.querySelector(".modal__content")) {
+    if (event.key === "ArrowLeft") {
+      showPreviousModal();
+    } else if (event.key === "ArrowRight") {
+      showNextModal();
     }
   }
 }
 
-export { showModal };
+function createListeners() {
+  const modal = document.querySelector(".modal");
+  document.querySelector(".modal__close").addEventListener("click", closeModal);
+
+  document
+    .querySelector(".modal")
+    .addEventListener("click", modalCloseIfClickedOutside);
+
+  modal
+    .querySelector(".modal__back")
+    .addEventListener("click", showPreviousModal);
+
+  modal
+    .querySelector(".modal__forward")
+    .addEventListener("click", showNextModal);
+
+  window.addEventListener("keyup", checkKeyAndshowNextModal);
+}
+
+export { changeModal };
