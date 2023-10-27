@@ -150,15 +150,16 @@ function showModal(photoSrc) {
     };
 
     // window.addEventListener("keydown", (event) => {
+    //   console.log("dupa");
     //   if (document.querySelector(".modal__content")) {
     //     if (event.key === "ArrowLeft") {
     //       console.log("left");
 
-    //       showPreviousModal();
+    //       showPreviousSmallModal();
     //     } else if (event.key === "ArrowRight") {
     //       console.log("right");
 
-    //       showNextModal();
+    //       showNextSmallModal();
     //     }
     //   }
     // });
