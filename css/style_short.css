@@ -42,12 +42,10 @@ img {
   border: solid 6px #202020;
   margin: 15px;
 }
-div p {
+#about p {
   color: #ffffff;
   width: 72%;
-  font-size: large;
   text-align: justify;
-  /* font-family: Inter, sans-serif; */
   font-weight: 100;
   font-family: Montserrat;
   font-size: 1.3rem;
