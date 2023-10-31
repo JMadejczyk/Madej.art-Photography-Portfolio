@@ -1,9 +1,18 @@
-/* style dla całej strony */
+/* style dla całej strony
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Roboto+Slab&display=swap"); */
+
+@import url("https://fonts.googleapis.com/css2?family=Alegreya&family=Alegreya+SC&display=swap");
+
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  /* font-family: Helvetica, Arial, sans-serif; */
+  /* font-family: "Libre Baskerville", serif; */
   /* font-family: Inter, sans-serif; */
+  /* font-family: "Libre Baskerville", serif;
+  font-family: "Roboto Slab", serif; */
+  font-family: "Alegreya SC", serif;
   background-color: #353535;
   margin: 0;
   padding: 0;
@@ -69,12 +78,15 @@ button {
   left: 0;
   top: 100px;
   /* background-color: #555555; */
-  background-color: #4d4d4d;
-  width: 12.5em;
+  /* background-color: #4d4d4d; */
+  background-color: rgba(32, 32, 32, 0.6);
+  backdrop-filter: blur(10px);
+
+  /* width: 12.5em; */
   /* height: 400px; */
   z-index: 1000;
   /* display: none; */
-  border: solid #2c2c2c;
+  /* border: solid #2c2c2c; */
   /* margin: 10px; */
   display: flex;
   flex-direction: column;
@@ -188,11 +200,15 @@ footer {
   position: relative;
   bottom: 0;
   margin-top: auto;
-  font-family: Montserrat;
+  /* font-family: Montserrat; */
+  /* font-family: "Libre Baskerville", serif; */
+  /* font-family: "Libre Baskerville", serif;
+  font-family: "Roboto Slab", serif; */
+  font-family: "Alegreya", serif;
   font-weight: 300;
 }
 h1 {
-  font-size: x-large;
+  font-size: 1.75rem;
 }
 @media only screen and (max-width: 800px) {
   #container {
@@ -239,20 +255,28 @@ body.preload * {
   display: flex;
   /* justify-content: center; */
   align-items: center;
+  /* border: 1px solid #60606066;
+  border-left: none;
+  border-right: none; */
 }
+
 #menu div:hover {
   background-color: #353535;
 }
 #menu div svg {
-  padding: 15px;
+  padding: 1.8rem;
   /* position: absolute; */
   /* left: 10px; */
 }
 #menu p {
   margin: 0.7em;
   margin-left: 0.3em;
-  font-size: normal;
+  margin-right: 2rem;
+  font-size: 1.15rem;
+  text-wrap: nowrap;
+  /* padding: 0.7rem; */
 }
+
 a {
   color: #fff;
   text-decoration: none;
