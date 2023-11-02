@@ -4,7 +4,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Roboto+Slab&display=swap"); */
 
-@import url("https://fonts.googleapis.com/css2?family=Alegreya&family=Alegreya+SC&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Alegreya&family=Alegreya+SC&display=swap"); */
+
+@import url("https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&display=swap");
 
 body {
   /* font-family: Helvetica, Arial, sans-serif; */
@@ -12,7 +14,8 @@ body {
   /* font-family: Inter, sans-serif; */
   /* font-family: "Libre Baskerville", serif;
   font-family: "Roboto Slab", serif; */
-  font-family: "Alegreya SC", serif;
+  /* font-family: "Alegreya SC", serif; */
+  font-family: "Sorts Mill Goudy", serif;
   background-color: #353535;
   margin: 0;
   padding: 0;
@@ -40,6 +43,13 @@ header {
   padding-left: 0;
   padding-right: 0;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+header h1 {
+  font-style: normal;
+  font-weight: normal;
+  line-height: 118%;
+  margin: 0;
+  padding-top: 4px;
 }
 button {
   background-color: transparent;
@@ -204,11 +214,12 @@ footer {
   /* font-family: "Libre Baskerville", serif; */
   /* font-family: "Libre Baskerville", serif;
   font-family: "Roboto Slab", serif; */
-  font-family: "Alegreya", serif;
+  /* font-family: "Alegreya", serif; */
+  font-family: "Sorts Mill Goudy", serif;
   font-weight: 300;
 }
 h1 {
-  font-size: 1.75rem;
+  font-size: 1.7rem;
 }
 @media only screen and (max-width: 800px) {
   #container {
