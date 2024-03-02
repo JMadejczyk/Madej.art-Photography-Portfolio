@@ -1,5 +1,7 @@
-# Madej.art Photography portfolio site
+# <a href="https://madej.art/" target="_blank">Madej.art</a> Photography portfolio site
 I wanted to create a place where I could present my photos in high quality to the wide public.
+
+
 
 The design is very simple, but it was supposed to be this way. The first impression should be done by the photos, not the site itself.
 
