@@ -1,4 +1,6 @@
 # <a href="https://madej.art/" target="_blank">Madej.art</a> Photography portfolio site
+(This is an old version of madej.art website, look at: <a href="https://github.com/JMadejczyk/madej.art-nextjs" target="_blank">JMadejczyk/madej.art-nextjs</a> to see latest repo)
+
 I wanted to create a place where I could present my photos in high quality to the wide public.
 
 
